@@ -6,7 +6,7 @@ import Header from './components/Header';
 import StartGameScreen from './components/screens/StartGameScreen';
 import GameScreen from './components/screens/GameScreen';
 import GameOverScreen from './components/screens/GameOverScreen';
-
+ 
 const fetchFonts = () => {
   return Font.loadAsync({
     'open-sans': require('./assets/fonts/OpenSans-Regular.ttf'),

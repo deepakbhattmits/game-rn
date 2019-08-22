@@ -11,6 +11,7 @@ import {
 import Card from '../reuse/Card';
 import Input from '../reuse/Input';
 import Number from '../reuse/Number';
+import MainButton from '../MainButton';
 import Colors from '../constants/Colors';
 
 const StartGameScreen = props => {
@@ -43,7 +44,11 @@ const StartGameScreen = props => {
     confirmedOutput=  <Card style={ styles.summaryContainer }>
                           <Text style={ styles.summaryText }>You Selected </Text>
                           <Number>{ selectedNumber } </Number>
-                          <Button title='Start Game' onPress={ () => props.onStartGame( selectedNumber ) } />                         
+                          <MainButton 
+                              onPress={ () => props.onStartGame( selectedNumber ) } 
+                          >
+                            Start Game
+                          </MainButton>
                       </Card>
   }
   return (

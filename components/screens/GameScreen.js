@@ -1,7 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { View, Text, Button, Alert, StyleSheet } from 'react-native';
+import { View, Text, Alert, StyleSheet } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import Number from '../reuse/Number';
 import Card from '../reuse/Card';
+import DefaultStyles from '../constants/default-styles';
+import MainButton  from '../MainButton';
 
 const generateRamdomNumber = ( min, max, exclude ) => {
     min = Math.ceil( min );
@@ -44,11 +47,15 @@ const GameScreen = props => {
     }
     return (
         <View style={ styles.screen }>
-            <Text>Opponent Guess </Text>
+            <Text style={ DefaultStyles.bodyText }>Opponent Guess </Text>
             <Number> { currentGuess }</Number>
             <Card style={ styles.buttonContainer }>
-                <Button title='Lower' onPress={ nextGuessHandler.bind(this, 'lower') }/>
-                <Button title='Greater' onPress={ nextGuessHandler.bind(this, 'greater') } />
+                <MainButton onPress={ nextGuessHandler.bind(this, 'lower') }>
+                   <Ionicons name='md-remove' size={ 24 } color='white' />
+                </MainButton>
+                <MainButton onPress={ nextGuessHandler.bind(this, 'greater') } >
+                    <Ionicons name='md-add' size={ 24 } color='white' />
+                </MainButton>
             </Card>
         </View>
         );
