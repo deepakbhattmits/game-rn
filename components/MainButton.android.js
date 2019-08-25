@@ -1,15 +1,25 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { 
+        View, 
+        Text,
+        TouchableOpacity,
+        TouchableNativeFeedback,
+        Platform,
+        StyleSheet } from 'react-native';
 import Colors from './constants/Colors'; 
 const MainButton = props => {
+    let ButtonComponent = TouchableOpacity;
+    if( Platform.Version >= 21 ) {
+        ButtonComponent = TouchableNativeFeedback;
+    }
     return (
-        <TouchableOpacity activeOpacity={ 0.6 } onPress={ props.onPress }>
+        <ButtonComponent onPress={ props.onPress }>
             <View style={ styles.button } >
                 <Text style={ styles.buttonText }>
                     { props.children }
                 </Text>
             </View>
-        </TouchableOpacity>
+        </ButtonComponent>
         
     );
 };
@@ -22,7 +32,7 @@ const styles= StyleSheet.create({
     },
     buttonText: {
         color: '#fff',
-        fontFamily: 'open-sans',
+        fontFamily: 'open-sans-bold',
         fontSize: 18,
     },
 });
