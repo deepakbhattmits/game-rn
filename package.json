@@ -8,15 +8,15 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "expo": "^34.0.4",
-    "expo-font": "^6.0.1",
-    "react": "16.8.3",
-    "react-dom": "^16.8.6",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
-    "react-native-web": "^0.11.4"
+    "expo": "^42.0.3",
+    "expo-font": "^9.2.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-native": "^0.65.1",
+    "react-native-web": "^0.17.1"
   },
   "devDependencies": {
-    "babel-preset-expo": "^6.0.0"
+    "babel-preset-expo": "^8.4.1"
   },
   "private": true
 }
